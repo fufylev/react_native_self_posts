@@ -1,16 +1,16 @@
 {
   "expo": {
-    "name": "Blank Template",
-    "slug": "react_native_self_posts",
+    "name": "React native Self Posts App",
+    "slug": "rn-self-posts",
     "privacy": "public",
-    "sdkVersion": "36.0.0",
+    "sdkVersion": "35.0.0",
     "platforms": [
       "ios",
       "android",
       "web"
     ],
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
