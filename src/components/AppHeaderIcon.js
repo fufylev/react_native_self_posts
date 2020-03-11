@@ -3,9 +3,8 @@ import { StyleSheet, Platform } from 'react-native';
 import { HeaderButton } from 'react-navigation-header-buttons';
 import { THEME } from '../theme';
 import { Ionicons } from '@expo/vector-icons';
-// <Ionicons name="md-checkmark-circle" size={32} color="green" />
 
-const AppHeaderIcon = (props) => {
+const AppHeaderIcon = props => {
     return (
         <HeaderButton
             {...props}
