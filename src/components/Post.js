@@ -1,13 +1,20 @@
 import React from 'react';
 import { StyleSheet, ImageBackground, View, Text, TouchableOpacity } from 'react-native';
 
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+function getDateFormatted(givenDate) {
+    const date = new Date(givenDate);
+    return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
+}
+
 const Post = ({ post, onOpen }) => {
     return (
         <TouchableOpacity activeOpacity={0.7} onPress={() => onOpen(post)}>
             <View style={styles.post}>
                 <ImageBackground style={styles.image} source={{ uri: post.img }}>
                     <View style={styles.textWrap}>
-                        <Text style={styles.title}>{new Date(post.date).toLocaleDateString()}</Text>
+                        <Text style={styles.title}>{getDateFormatted(post.date)}</Text>
                     </View>
                 </ImageBackground>
             </View>

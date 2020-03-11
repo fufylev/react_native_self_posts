@@ -1,7 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Button, ScrollView, Alert } from 'react-native';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import { THEME } from '../theme';
 import { DATA } from '../data';
+import AppHeaderIcon from '../components/AppHeaderIcon';
 
 const PostScreen = ({ navigation }) => {
     const postId = navigation.getParam('postId');
@@ -36,9 +38,17 @@ const PostScreen = ({ navigation }) => {
 
 PostScreen.navigationOptions = ({ navigation }) => {
     const date = navigation.getParam('date');
+    const booked = navigation.getParam('booked');
+
+    const iconName = booked ? 'ios-star' : 'ios-star-outline';
 
     return {
         headerTitle: `Post ${new Date(date).toLocaleDateString()}`,
+        headerRight: (
+            <HeaderButtons HeaderButtonComponent={AppHeaderIcon}>
+                <Item title="bookmark" iconName={iconName} onPress={() => null} />
+            </HeaderButtons>
+        ),
     };
 };
 
@@ -49,7 +59,6 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     textWrapper: {
-        // flex: 1,
         margin: 10,
         alignItems: 'center',
     },
