@@ -1,5 +1,5 @@
 ## Self Posts React Native App
-This is my second React Native project where I develope a simple Self Posts app with these various features but not limited to:
+This is my third React Native project where I develope a simple Self Posts app with these various features but not limited to:
 * hooks, redux, 
 * styles, icons
 * navigation (Navigation)
