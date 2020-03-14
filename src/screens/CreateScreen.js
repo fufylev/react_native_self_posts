@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
     StyleSheet,
     Text,
@@ -14,19 +14,22 @@ import { useDispatch } from 'react-redux';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import AppHeaderIcon from '../components/AppHeaderIcon';
 import { addPost } from '../store/actions/post';
+import PhotoPicker from '../components/PhotoPicker';
 
 const CreateScreen = ({ navigation }) => {
     const dispatch = useDispatch();
     const [text, setText] = useState('');
+    const imgRef = useRef();
 
-    const img =
-        'https://images.unsplash.com/photo-1583272630857-5a0fd42e611e?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixlib=rb-1.2.1&q=80&w=800';
+    const photoPickHandler = uri => {
+        imgRef.current = uri;
+    };
 
     const saveHandler = () => {
         const post = {
             date: new Date().toJSON(),
             text: text,
-            img: img,
+            img: imgRef.current,
             booked: false,
         };
         dispatch(addPost(post));
@@ -45,13 +48,8 @@ const CreateScreen = ({ navigation }) => {
                         onChangeText={setText}
                         multiline
                     />
-                    <Image
-                        style={styles.image}
-                        source={{
-                            uri: img,
-                        }}
-                    />
-                    <Button title="Create Post" onPress={saveHandler} />
+                    <PhotoPicker onPick={photoPickHandler} />
+                    <Button title="Create Post" onPress={saveHandler} disabled={!text || !imgRef.current} />
                 </View>
             </TouchableWithoutFeedback>
         </ScrollView>

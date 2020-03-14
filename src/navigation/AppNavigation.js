@@ -94,21 +94,21 @@ const MainNavigator = createDrawerNavigator(
             screen: BottomNavigator,
             navigationOptions: {
                 drawerLabel: 'Main',
-                drawerIcon: <Ionicons size={22} name="md-home" />,
+                drawerIcon: <Ionicons size={20} name="md-home" />,
             },
         },
         About: {
             screen: AboutNavigator,
             navigationOptions: {
                 drawerLabel: 'About',
-                drawerIcon: <Ionicons size={22} name="ios-information-circle" />,
+                drawerIcon: <Ionicons size={20} name="ios-information-circle" />,
             },
         },
         Create: {
             screen: CreateNavigator,
             navigationOptions: {
                 drawerLabel: 'New post',
-                drawerIcon: <MaterialIcons size={22} name="add-a-photo" />,
+                drawerIcon: <MaterialIcons size={20} name="add-a-photo" />,
             },
         },
     },
@@ -116,8 +116,8 @@ const MainNavigator = createDrawerNavigator(
         contentOptions: {
             activeTintColor: THEME.MAIN_COLOR,
             labelStyle: {
-                fontFamily: 'open-bold',
-                fontSize: 22
+                fontFamily: 'open-regular',
+                fontSize: 18,
             },
         },
     },
