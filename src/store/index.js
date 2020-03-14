@@ -1,5 +1,8 @@
-import {createStore} from 'redux'
+import { createStore, combineReducers } from 'redux';
+import { postReducer } from './reducers/post';
 
-const roorReducer = () => {}
+const roorReducer = combineReducers({
+    post: postReducer,
+});
 
 export default createStore(roorReducer);
