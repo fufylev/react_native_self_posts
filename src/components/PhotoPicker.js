@@ -27,7 +27,7 @@ const PhotoPicker = ({ onPick }) => {
         const img = await ImagePicker.launchCameraAsync({
             quality: 0.7,
             allowsEditing: false,
-            aspect: [3, 4],
+            aspect: [4, 3],
         });
 
         setImage(img.uri);
@@ -49,8 +49,9 @@ const styles = StyleSheet.create({
         marginBottom: 15,
     },
     image: {
-        // width: '100%',
-        height: 300,
+        width: '100%',
+        height: 400,
         marginTop: 15,
+        resizeMode: 'contain'
     },
 });
