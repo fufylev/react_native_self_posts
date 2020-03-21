@@ -6,7 +6,7 @@ import AppHeaderIcon from '../components/AppHeaderIcon';
 const AboutScreen = () => {
     return (
         <View style={styles.center}>
-            <Text style={styles.text}>The best app I've ever created 😎</Text>
+            <Text style={styles.text}>A simple Self Posts app with various features and very creative design adapted to each platform in its own way</Text>
             <Text style={styles.text}>
                 Version <Text style={styles.ver}>1.0.0</Text>
             </Text>
