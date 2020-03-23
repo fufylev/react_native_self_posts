@@ -8,7 +8,7 @@ export async function bootstrap() {
             'open-regular': require('../assets/fonts/OpenSans-Regular.ttf'),
         });
         await DB.init();
-        console.log('Database started...');
+        // console.log('Database started...');
     } catch (e) {
         console.log('Error: ', e);
     }
