@@ -14,9 +14,9 @@ const BookedScreen = ({ navigation }) => {
         });
     };
 
-    const bookedPosts = useSelector(state => state.post.bookedPosts)
+    const bookedPosts = useSelector(state => state.post.bookedPosts);
     
-    return <PostList data={bookedPosts} onOpen={openPostHandler} />;
+    return <PostList data={bookedPosts} onOpen={openPostHandler} page='Booked'/>;
 };
 
 BookedScreen.navigationOptions = ({navigation}) => ({

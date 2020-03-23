@@ -1,14 +1,14 @@
 import React from 'react';
 import { View, StyleSheet, FlatList, Text } from 'react-native';
 import Post from '../components/Post';
-import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 
-export const PostList = ({ data = [], onOpen }) => {
-    console.log(data);
+export const PostList = ({ data = [], onOpen, page }) => {
+    // console.log(data);
     if (!data.length) {
         return (
             <View style={styles.noPostsWrapper}>
-                <Text style={styles.noItems}>Press 📸 to make post ⬆️️</Text>
+                {page ==='Booked' && <Text style={styles.noItems}>No bookmarked posts️️</Text>}
+                {!page && <Text style={styles.noItems}>Press 📸 to make post ⬆️️</Text>}
             </View>
         );
     }
